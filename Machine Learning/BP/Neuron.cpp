@@ -8,17 +8,23 @@ using std::vector;
 
  class Neuron 
 {
-	const int n = 3;
-	const int m = 3;
+	#define n 3
+	#define m 3
 	private:
-	    double x[n] = {1,2,3};
-	    double [n][m] w;
-	    double [n] link;
-	    double [m] pre;
-	    double [m] after;
+		
+//		int n = 0;
+//		cin >> n;
+//		int *x = new int[n];
+//		delete[] x;
+
+	    double x[n];
+	    double w[n][m];
+	    double link[n];
+	    double pre[m];
+	    double after[m];
 	    
 	    double rate;
-	    double [] resi;
+	    double resi[];
 	    double change;
 	    
 	public:
@@ -42,7 +48,7 @@ using std::vector;
 	        
 	    }
 	    
-	    double [] dgemv(double[n] a, double[n][m] b)	//向量乘法 
+	    double [m] dgemv(double[n] a, double[n][m] b)	//向量乘法 
 	    {
 	    	int i = 0 , j = 0 ;
 	    	while (j+1 != m){

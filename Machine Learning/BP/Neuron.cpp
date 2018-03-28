@@ -48,7 +48,7 @@ using std::vector;
 	        
 	    }
 	    
-	    double [m] dgemv(double[n] a, double[n][m] b)	//向量乘法 
+	    double *dgemv(double a[n], double b[n][m])	//向量乘法 
 	    {
 	    	int i = 0 , j = 0 ;
 	    	while (j+1 != m){
@@ -59,11 +59,12 @@ using std::vector;
 				}
 				j++;
 			}
-	    	return temp[j];
+	    	return temp;
 		}
 	  
-	  double pre(double[n] x, double[n][m] w) {	//
-	  	return pre = double dgemv(double[n] x, double[n][m] w);
+	  double *pre(double x[n], double w[n][m]) {	//
+	  	double pre[m];
+	  	return pre = dgemv(double x[n], double w[n][m]);
 	  }
 	  
 	  double after(double pre){
